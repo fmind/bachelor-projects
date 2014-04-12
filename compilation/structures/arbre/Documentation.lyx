@@ -1,0 +1,350 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0mm
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 1 0 9 -1
+\bullet 2 0 0 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 1
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+\size giant
+Documentation
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/.lyx/clipart/nancy2.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Année 2011-2012
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Représentation
+\end_layout
+
+\begin_layout Standard
+L'arbre abstrait est ensemble de noeuds, reliés entre eux par des relations
+ 
+\begin_inset Quotes sld
+\end_inset
+
+frère-frère
+\begin_inset Quotes srd
+\end_inset
+
+ et 
+\begin_inset Quotes sld
+\end_inset
+
+parent-fils
+\begin_inset Quotes srd
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les attributs de la structure sont:
+\end_layout
+
+\begin_layout Itemize
+int id : identifiant unique du noeud représenté par un entier
+\end_layout
+
+\begin_layout Itemize
+char * type : type de noeud (programme, fonction, instruction ...) représenté
+ par une chaîne de caractère
+\end_layout
+
+\begin_layout Itemize
+char * valeur : chaîne de caractère représentant la valeur du noeud
+\end_layout
+
+\begin_layout Itemize
+struct Noeud * fils : liste chaînée des noeuds fils
+\end_layout
+
+\begin_layout Itemize
+struct Noeud * frere : liste chaînée des noeuds frères
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Parmis les fils, il est possible d'ajouter et de récupérer un noeud à gauche
+ ou à droite.
+ La position du noeud donne son rôle la représentation.
+\end_layout
+
+\begin_layout Standard
+Exemple pour une affectation:
+\end_layout
+
+\begin_layout Itemize
+A gauche, l'identificateur de la variable pour affectation
+\end_layout
+
+\begin_layout Itemize
+A droite, expression (ou valeur) à affecter à une variable
+\end_layout
+
+\begin_layout Section
+Fonctions
+\end_layout
+
+\begin_layout Standard
+Les fonctions de génération permettent de construire un noeud à partir d'un
+ arbre.
+ Elles retournent du code assembleur.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Pour générer le code du programme, les fonctions sont:
+\end_layout
+
+\begin_layout Itemize
+char * genererCode(Noeud * n): fonction générique chargée d'appeler d'autres
+ fonctions de génération
+\end_layout
+
+\begin_layout Itemize
+char * genererCodeProgramme(Noeud * n): genère le code d'un programme
+\end_layout
+
+\begin_layout Itemize
+char * genererCodeFonction(Noeud * n): génère le code d'une fonction
+\end_layout
+
+\begin_layout Itemize
+char * genererCodeInstruction(Noeud * n): génère le code d'une instruction
+\end_layout
+
+\begin_layout Itemize
+char * genererCodeIndentificateur(Noeud * n): génère le code d'un identificateur
+\end_layout
+
+\begin_layout Itemize
+char * genererCodeConstante(Noeud * n): génère le code d'une constante
+\end_layout
+
+\begin_layout Itemize
+char * genererCodeVariable(Noeud * n): génère le code d'une variable
+\end_layout
+
+\begin_layout Section
+Utilisation
+\end_layout
+
+\begin_layout Standard
+Pour tester le programme, tapez la commande 
+\begin_inset Quotes sld
+\end_inset
+
+make
+\begin_inset Quotes srd
+\end_inset
+
+ dans un terminal.
+ Ensuite, lancer l'exécutable avec 
+\begin_inset Quotes sld
+\end_inset
+
+./test_table.exe
+\begin_inset Quotes srd
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Voici le résultat de l'exécution pour un programme simple:
+\end_layout
+
+\begin_layout Standard
+Debut
+\end_layout
+
+\begin_layout Standard
+Noeud 0 - programme - programme
+\end_layout
+
+\begin_layout Standard
+Fils : 
+\end_layout
+
+\begin_layout Standard
+--Noeud 1 - fonction - main
+\end_layout
+
+\begin_layout Standard
+--Fils :
+\end_layout
+
+\begin_layout Standard
+----Noeud 2 - instruction - affectation
+\end_layout
+
+\begin_layout Standard
+----Fils :
+\end_layout
+
+\begin_layout Standard
+------Noeud 3 - identificateur - i
+\end_layout
+
+\begin_layout Standard
+------Fils : /
+\end_layout
+
+\begin_layout Standard
+------Noeud 4 - constante - 0
+\end_layout
+
+\begin_layout Standard
+------Fils : /
+\end_layout
+
+\begin_layout Standard
+Code:
+\end_layout
+
+\begin_layout Standard
+main:
+\end_layout
+
+\begin_layout Standard
+CMOVE(0, R0)
+\end_layout
+
+\begin_layout Standard
+PUSH(R0)
+\end_layout
+
+\begin_layout Standard
+POP(R0) ST(RO,1)
+\end_layout
+
+\begin_layout Standard
+Fin 
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,31 @@
+| Traduction du programme C ci-dessous en assembleur Beta (Bsim).
+
+| ------------------------------ Programme C a traduire
+
+| int i = 0;
+|
+| void main() {
+|	int = 0;
+| }
+
+| ------------------------------ Inclusions
+
+.include lib/beta.uasm
+
+| ------------------------------ Debut du programme
+
+. = 0
+	BR(main)
+
+| ------------------------------ Declarations
+
+i = R0
+
+| ------------------------------ Fonctions
+
+| Une pauvre affectation
+main:
+	CMOVE(0, i)
+
+main_end:
+	HALT()

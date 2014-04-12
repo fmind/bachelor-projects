@@ -1,0 +1,57 @@
+.include /home/freaxmind/workspace/miage-l3/compilation/assembleur/lib/beta.uasm
+
+| ------------------------------ Debut du programme
+. = 0
+	BR(somme_simple)
+	BR(somme_simple_en_memoire)
+	BR(operation_complexe)
+	HALT()
+
+| ------------------------------ Somme de 2 + 3 = 5
+
+a = R0
+b = R1
+c = R2
+
+| Resultat: R2 = 5
+somme_simple:
+	CMOVE(2, a)
+	CMOVE(3, b)
+	ADD(a, b, c)
+
+
+| ------------------------------ Idem avec utilisation de la memoire centrale
+
+| Memorise la valeur 2 dans la memoire (taille de 4 octets)
+ma:	LONG(2)
+mb:	LONG(3)
+mc:	LONG(0)
+
+| Resultat: R7 = 5
+somme_simple_en_memoire:
+	LD(ma, R5) | LOAD memoire vers registre
+	LD(mb, R6)
+	ADD(R5, R6, R7)
+	ST(R7, mc) | STORE registre vers memoire
+
+| ------------------------------ Operation plus complexe
+|int x = 100;
+|int y = 170;
+|int z;
+|	
+|z=x*2+(y-5)/3;
+
+x = R10
+y = R11
+z = R12
+
+| Resultat: R12 = FF
+operation_complexe:
+	CMOVE(100, x)
+	CMOVE(170, y)
+
+	MULC(x, 2, x)
+	SUBC(y, 5, y)
+	DIVC(y, 3, y)
+	
+	ADD(x, y, z)

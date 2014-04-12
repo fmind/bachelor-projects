@@ -1,0 +1,42 @@
+2012/03/12 11:28:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/freaxmind/www/miage-l3/tchange/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/freaxmind/www/miage-l3/tchange/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/freaxmind/www/miage-l3/tchange/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/freaxmind/www/miage-l3/tchange/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/12 11:28:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/freaxmind/www/miage-l3/tchange/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/freaxmind/www/miage-l3/tchange/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/freaxmind/www/miage-l3/tchange/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/freaxmind/www/miage-l3/tchange/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/12 11:28:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /home/freaxmind/www/miage-l3/tchange/framework/gii/GiiModule.php:165
+Stack trace:
+#0 /home/freaxmind/www/miage-l3/tchange/framework/web/CController.php(264): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /home/freaxmind/www/miage-l3/tchange/framework/web/CWebApplication.php(276): CController->run('')
+#2 /home/freaxmind/www/miage-l3/tchange/framework/web/CWebApplication.php(135): CWebApplication->runController('gii')
+#3 /home/freaxmind/www/miage-l3/tchange/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /home/freaxmind/www/miage-l3/tchange/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/gii
+---
+2012/03/12 13:01:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/freaxmind/www/miage-l3/tchange/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/freaxmind/www/miage-l3/tchange/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/freaxmind/www/miage-l3/tchange/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/freaxmind/www/miage-l3/tchange/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/03/12 13:01:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/freaxmind/www/miage-l3/tchange/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /home/freaxmind/www/miage-l3/tchange/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /home/freaxmind/www/miage-l3/tchange/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /home/freaxmind/www/miage-l3/tchange/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---

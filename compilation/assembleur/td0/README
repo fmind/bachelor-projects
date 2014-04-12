@@ -1,0 +1,16 @@
+Bonjour Monsieur,
+
+Le programme source se nomme "maximum.uasm".
+Vous devriez pouvoir l'éxecuter directement, car j'ai inclus dans le répertoire:
+    - le fichier de macros lib/beta.uasm
+    - le binaire du simulateur bin/bsim.jar
+
+Le résultat final s'affiche dans le registre R24. Vous pouvez changer le tableau d'entrée à votre guise.
+
+Je n'ai pas rencontré de problème particulier pour réaliser le programme, mais j'ai apprécié votre aide pour la déclaration du tableau.
+C'est difficile de trouver des explications ou des exemples sur le net avec ce logiciel ...
+
+Le projet sera à faire en "vrai" assembleur ou avec celui ci ? Mes camarades m'ont dit que cela rendrait la tâche plus difficile.
+
+Pour me contacter:
+    Médéric Hurier <mederic.hurier@etudiant.univ-nancy2.fr>

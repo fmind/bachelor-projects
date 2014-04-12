@@ -1,0 +1,36 @@
+.include /home/freaxmind/workspace/miage-l3/compilation/assembleur/lib/beta.uasm
+
+| ------------------------------ Debut du programme
+. = 0
+	BR(condition)
+	HALT()
+
+| ------------------------------ Operation plus complexe avec condition
+|int a= 100;
+|int b = 170;
+|int x;
+|
+|if (b<a)
+|  x = 2000
+|else
+|  x = 1000
+
+a = R0
+b = R1
+x = R2
+
+condition:
+	CMOVE(100, a)	| Résulat: Ox3E8
+	|CMOVE(200, a)	| Résulat: Ox7D0
+	CMOVE(170, b)
+	CMPLT(b, a, R4)	| R4 <- If (b < a)
+	BF(R4, else)
+	
+then:
+	CMOVE(2000, x) | 0x3E8
+	BR(fif)
+else:
+	CMOVE(1000, x) | Ox7D0
+fif:
+	HALT()
+

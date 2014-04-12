@@ -1,0 +1,23 @@
+/*
+ * Test génération de code : une fonction (definition)
+f	PROC
+	; preambule de la proc
+	PUSH BP 		;sauvegarde de BP
+	MOV BP, SP 	;init de BP
+	SUB SP, 6		;reservation variables locales
+	
+	;return 0
+	; a tester plus tard...
+	
+f_ret:			;fin de la proc
+	ADD SP, 6
+	POP BP
+	RET
+	
+f	ENDP
+  */
+ 
+  int f(int a, int b){ /* tester ceci */
+	int x, y, z;
+	return 0;
+ }

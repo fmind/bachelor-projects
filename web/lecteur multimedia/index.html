@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="js/jquery-ui/css/smoothness/jquery-ui-1.8.16.custom.css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="js/jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script src="js/player.js"></script>
+    
+    <title>Lecteur multimédia</title>
+  </head>
+  <body>
+    <div id="wrapper">
+
+      <header>
+        <hgroup>
+          <h1>Lecteur multimédia</h1>
+          <h2>De Médéric Hurier - Licence MIAGE</h2>
+        </hgroup>
+      </header>
+
+      <nav class="menu_haut">
+        <a href="javascript:popup_ouvrir_media();">Ouvrir un fichier</a>
+        <a href="javascript:popup_a_propos();" class="right">A propos</a>
+      </nav>
+
+      <hr />
+
+      <section class="player">
+        <h1 class="align_center"></h1>
+        <video src="media/exemple.webm">
+          <p>Désolé, votre navigateur ne supporte pas la balise vidéo</p>
+        </video>
+      </section>
+
+      <br />
+
+      <nav class="boutons">
+        <div class="left">
+          <button class="lecture" style="width: 60px;">Lecture</button>
+          <button class="stop">Stop</button>
+          |
+          <button class="reculer">Reculer</button>
+          <button class="avancer">Avancer</button>
+        </div>
+        <input type="range" min="0" value="0" style="width: 40%" id="timer" class="align_center"/>
+        <div class="right">
+          <button class="plein_ecran">Plein écran</button>
+          |
+          <button class="vol_minus">Vol -</button>
+          <button class="vol_plus">Vol +</button>
+          <button class="vol_muet" style="width: 60px;">Muet</button>
+        </div>
+      </nav>
+
+      <div class="clear"></div>
+      <br /><hr />
+
+      <footer class="align_center">  
+        Lecteur Multimédia
+        <br />
+        Tous droits réservés &copy;2011
+      </footer>
+
+      <div id="a_propos" class="hide align_center">
+        Lecteur Multimédia
+        <br />
+        Auteur: Médéric Hurier
+        <br /><br />
+        <a href="http://en.wikipedia.org/wiki/HTML5_video#Browser_support" target="_blank">Liste des formats supportés</a>
+        <br /><br />
+        Tous droits réservés &copy;2011
+      </div>
+
+      <div id="ouvrir_media" class="hide align_center">
+        Sélectionnez un fichier
+        <br /><br />
+        <input type="file" name="nouveau_media" id="nouveau_media" accept="video/webm,video/ogg,video/mp4"/>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+1. Quels sont les identificateurs acceptés ?
+y                     OUI
+_X_                   OUI
+_                     OUI
+5                     NON
+fct-1                 NON
+_SOMME_POINTS_        OUI
+4e_jour               NON
+plus_grand_diviseur   OUI
+p.g.c.d.              NON
+
+2. Quel type peut avoir une variable pouvant contenir chacune des valeurs d’une ligne :
+1 12 4 0 -125         short
+1 12 -4 0 250         int
+1 12 4 0 250          unsigned short
+1 12 -4 0.5 125       float
+-220 32000 0          int
+-3000005.000000001    float
+410 50000 2           unsigned int
+410 50000 -2          int
+3.14159265 1015       float
+2*107 10000001        unsigned int
+2*10-7 10000001       unsigned float
+1.05*1050 0.0001      unsigned float
+305.122212 0 -12      float
+
+3. Dans le code suivant, type(fiche[i,j]->name) est évalué au plus 4 fois.
+
+switch (type(fiche[i,j]->name)
+{
+  case 0: f_0(data);break;
+  case 1: f_1(data);break;
+  case 2: f_2(data);break;
+  case 5: f_5(data);break;
+  default: f_all(data);break;
+}
+
+4. Évaluer les expressions suivantes en supposant
+a=20, b=5, c=-10, d=2, x=12, y=15
+
+(5*(x+2)*3)*(b+4)     1890     
+a == (b=5)            false
+a += (x+5)            37
+a != (c *= (-d))      false
+a *= c+(x-d)          0
+a %= d++              0
+a %= ++d              2
+(x++)*(a+c)           120
+a = x*(b<c)+y*!(b<c)  15
+!(x-d+c)||d           true
+a&&b||!0&&c&&!d       true
+x - (y = 3, y + 1)    8
+
+5. Quels sont les blocs acceptés ?
+{i = 5;}                  OUI
+{ }                       OUI
+{ ; ; }                   OUI
+{ ;; }                    OUI
+{i = 5; k = 3;}           OUI
+{i = 5; k = 3}            NON
+{i = 5; int k; k = 3;}    NON
+

@@ -1,0 +1,16 @@
+Créé correctement tous les arbres sauf pour les fichiers : 02 et 11
+le problème vient du fait qu'il n'ajoute pas les deuxièmes paramètre aux fonctions
+c.a.d qu'il creer un noeud appel de fonction, ayant pour fils les paramètres d'appel à cette fonction, mais il ne prend que le 1 paramètre en compte pas le deuxième dans le fichier 02, dans le main, l'appel à la fonction f(i+1,j) devraient normalement généré un noeud f avec 2 fils de type expression (i+1 et j)
+mais là il n'y a que le premier… (idem dans le fichie 11)
+
+
+Nouvelle méthode dans arbre.c :
+
+void ajouterFrere(Noeud * racine, Noeud * frere)
+
+
+voila
+
+
+
+

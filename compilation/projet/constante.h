@@ -1,0 +1,41 @@
+
+
+#ifndef compilation_constante_h
+#define compilation_constante_h
+
+#define EXECUTION_OK 1
+#define EXECUTION_PAS_OK 0
+
+#define TRUE  1
+#define FALSE 0
+
+#define TDS_VARIABLE_LOCALE "var_locale"
+#define TDS_VARIABLE_GLOBALE "var_globale"
+#define TDS_PARAMETRE_FONCTION "param_fct"
+#define TDS_NOM_FONCTION "nom_fct"
+#define TDS_TYPE_RETOUR_INT "int"
+#define TDS_TYPE_RETOUR_VOID "void"
+
+
+
+
+#define TYPE_NOEUD_PROGRAMME 10
+#define TYPE_NOEUD_DECLARATION_FONCTION 20
+#define TYPE_NOEUD_DECLARATION_VARIABLE 30
+#define TYPE_NOEUD_AFFECTATION 40
+#define TYPE_NOEUD_APPEL_FONCTION 50
+#define TYPE_NOEUD_IF 60
+#define TYPE_NOEUD_WHILE 70
+#define TYPE_NOEUD_BLOC 80
+#define TYPE_NOEUD_RETURN 90
+#define TYPE_NOEUD_IDENTIFICATEUR 110
+#define TYPE_NOEUD_CONSTANTE 120
+#define TYPE_NOEUD_ADD 130
+#define TYPE_NOEUD_SUB 140
+#define TYPE_NOEUD_MUL 150
+#define TYPE_NOEUD_DIV 160
+#define TYPE_NOEUD_INFERIEUR 170
+#define TYPE_NOEUD_SUPERIEUR 180
+
+
+#endif

@@ -1,0 +1,137 @@
+/* Global rules */
+* {
+	font: Cantarell Bold 10;
+}
+
+/* Main window and its states */
+#window {
+	border-radius: 75;
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(#AAAAAA), to(black));
+}
+#window.plus {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(lighter(blue)), to(black));
+}
+#window.minus {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(lighter(blue)), to(white));
+}
+#window.times {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(lighter(purple)), to(black));
+}
+#window.divides {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(lighter(purple)), to(white));
+}
+#window.compute_error {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(red), to(lighter(black)));
+}
+
+/* Result text field */
+GtkEntry {
+	color: black;
+	font-size: 25;
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(white), to(grey));
+}
+#window.compute_error GtkEntry, GtkEntry.welcome {
+	font-size: 20;
+}
+
+/* All buttons (figures, operations ...) */
+GtkButton {
+	border-style: inset;
+	border-width: 2;
+	border-radius: 50;
+	border-image: none;
+	border-color: black;
+	color: black;
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(orange), to(white));
+}
+GtkButton:hover {
+	border-color: white;
+	border-style: outset;
+	transition: 300ms ease-in-out;
+}
+
+/* Operations buttons */
+#button_plus, #button_minus, #button_times, #button_divides, #button_equals, #button_welcome {
+	border-radius: 20;
+}
+#button_plus {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(lighter(blue)), to(black));
+}
+#button_minus {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(lighter(blue)), to(white));
+}
+#button_times {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(lighter(purple)), to(black));
+}
+#button_divides {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(lighter(purple)), to(white));
+}
+#button_equals {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(green), to(white));
+}
+#button_welcome {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(yellow), to(white));
+}
+#button_cancel {
+	background-image: -gtk-gradient(
+								radial,
+								center center, 0,
+								center center, 1,
+								from(red), to(lighter(black)));
+}

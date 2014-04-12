@@ -1,0 +1,23 @@
+/*
+ * Test génération de code : une expression simple
+;...
+	MOV AX, j
+	PUSH AX
+	
+	MOV AX 3
+	PUSH AX
+	
+	POP BX
+	POP AX
+	ADD AX, BX
+	PUSH AX
+;...
+	
+  */
+
+int i =0;
+int j = 0;
+
+void main(){
+	i = j+3; /*tester ceci*/
+}

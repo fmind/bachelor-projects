@@ -1,0 +1,339 @@
+// tp2 exercice 1
+// fichier Point.java
+
+public class Point {
+	  private int x;
+	  private int y;
+	  public Point(int x, int y) {
+	    this.x = x;
+	    this.y = y;
+	  }
+	  public void translater(int x, int y) {
+	    this.x = this.x + x;
+	    this.y = this.y + y;
+	  }	  
+	  public int compareTo(Point p){
+		  if ((this.x == p.x) && (this.y == p.y)){
+			  return 0;
+		  }		  else if (this.x < p.x){
+			  return -1;
+		  }		  return 1;
+	  }	 
+	 public void setX(int x) {
+		this.x = x;
+	  }
+	  public void setY(int y) {
+		this.y = y;
+	  }
+	  public int getX() {
+	    return x;
+	  }
+	  public int getY() {
+	    return y;
+	  }
+	  public String toString() {
+	    return ("("+ x +"," + y + ")");
+	  }
+}
+
+//fichier Rectangle.java
+public class Rectangle {
+	  private Point infGauche;
+	  private Point supDroit;
+	  public Rectangle() {
+		  infGauche = new Point(0,0);
+		   supDroit = new Point(1,1);	  
+	  }
+	  public Rectangle(int x1, int y1, int x2, int y2) {
+	    infGauche = new Point(x1,y1);
+	    supDroit = new Point(x2,y2);
+	  }
+	  public Rectangle(Point p1, Point p2) {
+	    infGauche = p1;
+	    supDroit = p2;
+	  }
+	  public int surface() {	    return (supDroit.getX() - infGauche.getX())*(supDroit.getY() - infGauche.getY());
+	  }
+	  public int compareTo(Rectangle r) {
+		  if ((this.infGauche.compareTo(r.infGauche) == 0 ) &&(this.supDroit.compareTo(r.supDroit) == 0)){
+			  return 0;
+		  }
+		  return (this.infGauche.compareTo(r.infGauche) );
+	  }	  
+	  public void translater (int a, int b){
+		  infGauche.setX(infGauche.getX() + a);
+		  infGauche.setY(infGauche.getY() + b);
+		  supDroit.setX(supDroit.getX() + a);
+		  supDroit.setY(supDroit.getY() + b);
+	  }
+	  public String toString(){
+	    return ("inferieur gauche : " + infGauche +" superieur droit : " + supDroit);
+	  }
+}
+
+
+//fichier Test.java
+
+public class Test {
+	  public static void main(String args[]) {
+		    Point p1 = new Point(2,2);
+		    Point p2 = new Point(4,6);
+		    Rectangle r = new Rectangle(p1,p2);
+		    System.out.println("r " + r + " surface: " + r.surface());  // 8
+		    p1.translater(2,3);
+		    // La modification de p1 change la surface du rectangle
+		    System.out.println("r " + r + " surface: " + r.surface());  // 0
+		    p1 = new Point(2,2);
+		    p2 = new Point(4,6);
+		    r = new Rectangle(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+		    System.out.println("r " + r + " surface: " + r.surface());  // 8
+		    p1.translater(2,3);
+		    // La modification de p1 n'a pas d'effet sur la surface du rectangle
+		    System.out.println("r " + r + " surface: " + r.surface()); // 8
+		    p1 = new Point(2,2);
+		    p2 = new Point(4,6);
+		    r = new Rectangle(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+		    System.out.println("r " + r + " surface: " + r.surface());  // 8
+		    r.translater(2,3);
+		    // La translation de r n'a pas d'effet sur la surface du rectangle
+		    // mais ces deux point ont ete modifie
+		    System.out.println("r " + r + " surface: " + r.surface()); // 8		    
+		    // p1 n'est pas modifie
+		    System.out.println("p1 " + p1); // 8		    
+		  }
+}
+
+
+
+//tp2 exercice 2
+//fichier TableauDeRectangles.java
+
+public class TableauDeRectangles {
+	Rectangle [] t;
+	  public TableauDeRectangles() {
+	    t = new Rectangle[10];
+	  }
+	  public TableauDeRectangles(int n) {
+	    t = new Rectangle[n];
+	  }
+	  public void set (int i, Rectangle r){
+		  t[i] = r;
+	  }
+	  public void inserer(int i, Rectangle r) {
+		  if (t[i] != null){
+			  int j = t.length-1;
+			  while (j > i){
+				  t[j] = t[j-1];
+				  j--;
+			  }
+		  }
+	    	t[i] = r;
+	  }
+	  public boolean rechercher(Rectangle r){
+		for (int i=0; i<t.length;i++){
+			if (t[i] != null)
+				if (r.compareTo(t[i]) == 0)
+					return true;
+		}
+		return false;
+	  }
+	  public void toutesLesSurfaces() {
+	    for (int i=0;i<t.length;i++)
+	      if (t[i]!=null)
+	       System.out.println(t[i] + " surface = " + t[i].surface());
+	  }
+	  public String toString() {
+	     String s = "";
+	     for (int i=0;i<t.length;i++) {
+	      if (t[i] != null)
+	        s = s + t[i].toString() +"\n";
+	      }
+	     return s;
+	  }
+}
+
+
+// fichier Test.java
+public class Test {
+	  public static void main(String args []) {
+		Rectangle r1= new Rectangle(0,0,3,4);
+ 	   	Rectangle r2= new Rectangle(0,0,5,6);
+ 	   	Rectangle r3 = new Rectangle(0,0,7,8);
+		TableauDeRectangles t = new TableauDeRectangles();
+    t.set(0,r1);
+    t.set(1,r2);
+    System.out.println(t);
+    t.toutesLesSurfaces();
+    System.out.println();
+    t = new TableauDeRectangles(5);
+    t.inserer(0,r1);
+    t.inserer(1,r2);
+    System.out.println(t);
+    t.toutesLesSurfaces();
+    System.out.println();
+    t.inserer(0,r3);
+    System.out.println(t);
+    t.toutesLesSurfaces();
+    System.out.println(t.rechercher(r2));
+    Rectangle r4 = new Rectangle(1,1,3,4);
+    System.out.println(t.rechercher(r4));
+  }
+}
+
+//tp2 exercices 3 et 4
+
+public class Point {
+	  private int x;
+	  private int y;
+	  public Point(int x, int y) {
+	    this.x = x;
+	    this.y = y;
+	  }
+	  public void translater(int x, int y) {
+	    this.x = this.x + x;
+	    this.y = this.y + y;
+	  }
+	  public int compareTo(Point p){
+		  if ((this.x == p.x) && (this.y == p.y)){
+			  return 0;
+		  }
+		  else if (this.x < p.x){
+			  return -1;
+		  }
+		  return 1;
+	  }	  
+	public void setX(int x) {
+		this.x = x;
+	}	  
+	public void setY(int y) {
+		this.y = y;
+	  }
+	  public int getX() {
+	    return x;
+	  }
+	  public int getY() {
+	    return y;
+	  }
+	  public String toString() {
+	    return ("("+ x +"," + y + ")");
+	  }
+}
+
+
+public class Rectangle {
+	private static int nbRectangles;
+	private Point infGauche;
+	private Point supDroit;
+	public Rectangle() {
+		  infGauche = new Point(0,0);
+		   supDroit = new Point(1,1);	
+		   nbRectangles++;
+	}
+	public Rectangle(int x1, int y1, int x2, int y2) {
+	    infGauche = new Point(x1,y1);
+	    supDroit = new Point(x2,y2);
+	    nbRectangles++;
+	  }
+	  public Rectangle(Point p1, Point p2) {
+	    infGauche = p1;
+	    supDroit = p2;
+	    nbRectangles++;
+	  }
+	  public static int getNbRectangles() {
+		  return nbRectangles;
+	  }
+	  public int surface() {
+	    return (supDroit.getX() - infGauche.getX())*(supDroit.getY() - infGauche.getY());
+	  }
+	  public int compareTo(Rectangle r) {
+		  if ((this.infGauche.compareTo(r.infGauche) == 0 ) &&(this.supDroit.compareTo(r.supDroit) == 0)){
+			  return 0;
+		  }
+		  return (this.infGauche.compareTo(r.infGauche) );
+	  }
+	  public void translater (int a, int b){
+		  infGauche.setX(infGauche.getX() + a);
+		  infGauche.setY(infGauche.getY() + b);
+		  supDroit.setX(supDroit.getX() + a);
+		  supDroit.setY(supDroit.getY() + b);
+	  }
+	  public String toString(){
+	    return ("inferieur gauche : " + infGauche +" superieur droit : " + supDroit);
+	  }
+}
+
+public class ListeDeRectanglesNoeud {
+  private Rectangle element;
+  private ListeDeRectanglesNoeud  suivant;
+  public ListeDeRectanglesNoeud(Rectangle r,ListeDeRectanglesNoeud l){
+    element = r;
+    suivant = l;
+
+  }
+  public ListeDeRectanglesNoeud(Rectangle r){
+    this(r,null);
+  }
+  public ListeDeRectanglesNoeud getSuivant(){
+    return suivant;
+  }
+  public String toString(){
+    return element.toString();
+  }
+}
+
+public class ListeDeRectangles {
+  private static int nbListes;
+  private ListeDeRectanglesNoeud premier;
+  private int nbRectangles;
+  public ListeDeRectangles(){
+    premier = null;
+    nbListes++;
+  }
+  public static int getNbListes () {
+	  return nbListes;
+  }
+public int getNbRectangles() {
+	  return nbRectangles;
+  }
+  public boolean estVide(){
+    return premier == null;
+  }
+  public void inserer(Rectangle r){
+    if (estVide())
+      premier = new ListeDeRectanglesNoeud (r);
+    else
+      premier = new ListeDeRectanglesNoeud (r,premier);
+    nbRectangles++;  }
+  public String toString(){
+    String s="";
+    if (estVide())
+      return "Vide";
+    ListeDeRectanglesNoeud  p = premier;
+    while (p!=null){
+      s = s + " " + p.toString() + "\n";
+      p = p.getSuivant();
+    }
+    return s;
+  }
+}
+
+
+public class Test {
+  public static void main(String[] args) {
+    Rectangle r = new Rectangle(1,2,4,5);
+    ListeDeRectangles l = new ListeDeRectangles();
+    System.out.println("on a cree la liste, est-elle vide ? "+ l.estVide());
+    l.inserer(r);
+    l.inserer(new Rectangle(0,0,1,1));
+    l.inserer(new Rectangle(0,0,2,1));
+    l.inserer(new Rectangle(0,0,3,1));
+    System.out.println(l);
+    ListeDeRectangles l2 = new ListeDeRectangles();
+    l2.inserer(new Rectangle(0,0,4,1));
+    l2.inserer(new Rectangle(0,0,5,1));
+    System.out.println("Nombre de rectangles totale :" + Rectangle.getNbRectangles());
+    System.out.println("Nombre de rectangles dans liste l :" + l.getNbRectangles());
+    System.out.println("Nombre de rectangles dans liste 2 :" + l2.getNbRectangles());
+    System.out.println("Nombre de listes :" + ListeDeRectangles.getNbListes());
+  }
+}

@@ -1,0 +1,31 @@
+/*
+ * Test génération de code : une fonction (appel)
+;...
+; reservation pour le resultat
+	SUB SP, 2
+;passage du paramètre 1
+	MOV AX, i
+	PUSH AX
+;passage du paramètre 2
+	MOV AX, j
+	PUSH AX
+;appel
+	CALL f
+; suppression des paramètres
+	ADD SP, 4 ;2 paramètres
+;reste le resultat en sommet de pile
+;...
+	
+  */
+
+int i =0;
+int j = 0;
+
+int f(int a, int b){
+	int x, y, z;
+	return 0;
+ }
+
+void main(){
+	i = f(i,j); /*tester ceci*/
+}

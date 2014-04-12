@@ -1,0 +1,276 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0mm
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 1 0 9 -1
+\bullet 2 0 0 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 1
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+\size giant
+Documentation
+\end_layout
+
+\begin_layout Author
+
+\series bold
+\size larger
+Médéric Hurier
+\series default
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+Licence ISC parcours MIAGE
+\begin_inset Newline newline
+\end_inset
+
+mederic.hurier@etudiant.univ-nancy2.fr
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/.lyx/clipart/nancy2.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Année 2011-2012
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Structure
+\end_layout
+
+\begin_layout Standard
+Le dossier de TP est composé des fichiers suivants:
+\end_layout
+
+\begin_layout Itemize
+mini.y: règles de grammaire pour le logiciel bison
+\end_layout
+
+\begin_layout Itemize
+mini.lex: règles d'analyse des fichiers pour le logiciel flex
+\end_layout
+
+\begin_layout Itemize
+main.c: lance l'analyse
+\end_layout
+
+\begin_layout Itemize
+Makefile: génère un programme 
+\begin_inset Quotes sld
+\end_inset
+
+a.exe
+\begin_inset Quotes srd
+\end_inset
+
+ pour tester les fichiers
+\end_layout
+
+\begin_layout Itemize
+test: fichiers de test du langage miage
+\end_layout
+
+\begin_layout Section
+Utilisation
+\end_layout
+
+\begin_layout Standard
+Dans un terminal, lancer la commande 
+\begin_inset Quotes sld
+\end_inset
+
+make
+\begin_inset Quotes srd
+\end_inset
+
+ pour générer un fichier 
+\begin_inset Quotes sld
+\end_inset
+
+a.exe
+\begin_inset Quotes srd
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour tester les règles de grammaire, il faut fournir un flot texte en entrée
+ de cette facon:
+\end_layout
+
+\begin_layout Standard
+./a.exe < test/07.miage
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si l'exécution affiche 
+\begin_inset Quotes sld
+\end_inset
+
+Erreur
+\begin_inset Quotes srd
+\end_inset
+
+, le fichier n'est pas correcte.
+\end_layout
+
+\begin_layout Section
+Résultats
+\end_layout
+
+\begin_layout Standard
+Pour le fichier 01.miage (sans erreurs):
+\end_layout
+
+\begin_layout Standard
+./a.exe < test/01.miage /* * Test pour savoir si le compilo fonctionne */ int
+ i; void main(){ i= 0; } Termin
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Pour le fichier 03.miage (avec erreur):
+\end_layout
+
+\begin_layout Standard
+./a.exe < test/03.miage /* * Test d'erreur syntaxique */ int i, j = 0; int
+ f(int a, int b){ int x; 
+\end_layout
+
+\begin_layout Standard
+x=(a*2)+b-5/3 /*erreur ; attendu */ Erreur Termin 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour le fichier 07.miage (sans erreurs):
+\end_layout
+
+\begin_layout Standard
+./a.exe < test/01.miage /* * Test pour savoir si le compilo fonctionne */ int
+ i; void main(){ i= 0; } Termin
+\end_layout
+
+\end_body
+\end_document

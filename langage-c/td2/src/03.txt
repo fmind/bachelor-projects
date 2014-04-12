@@ -1,0 +1,1 @@
+Correct, on incrémente la case pointée après affectation (p++) et on commence à 0

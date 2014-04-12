@@ -1,0 +1,270 @@
+@charset "utf-8";
+
+/* ** ** Site gradients & fonts & colors ** ** */
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Ruslan Display', cursive;
+  font-size: 1.3em;
+}
+
+a {
+  color: red;
+}
+
+/* ** ** Functions ** ** */
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.align_left {
+  text-align: left;
+}
+.align_center {
+  text-align: center;
+}
+.align_right {
+  text-align: right;
+}
+.space-bot {
+  margin-bottom: 20px;
+}
+.space-top {
+  margin-top: 20px;
+}
+.space-sides {
+  margin: 0px 20px;
+}
+.space-inside {
+  padding: 15px;
+}
+
+/* ** ** Super blocks ** ** */
+
+#wrapper {
+  width: 960px;
+  margin: auto;
+}
+
+#content {
+  margin-left: 150px;
+  border: solid white 1px;
+  box-shadow: 0px 0px 16px white;
+}
+
+/* ** ** Header ** ** */
+
+header {
+  overflow: hidden;
+}
+
+/* ** ** Navigation ** ** */
+
+nav {
+  width: 125px;
+  border: outset white 2px;
+  box-shadow: 0px 0px 16px red;
+}
+
+nav h3  {
+  border-bottom: dashed white 1px;
+  font-size: 1em;
+}
+
+nav a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+}
+nav a:hover {
+  background-color:rgba(150, 150, 150, 0.6);
+}
+
+/* ** ** Article ** ** */
+
+article p {
+  font-size: 0.8em;
+  font-family : Times New Roman, Times, serif;
+}
+
+article aside {
+  float: right;
+  clear: right;
+  border: dashed white 1px;
+  border-right: none;
+  margin: 15px;
+  padding: 15px;
+  position: relative;
+  left: 30px;
+}
+article aside h3 {
+  margin: 0px;
+}
+
+article hgroup * {
+  margin: 10px;
+}
+article h1 {
+  font-size: 1.9em;
+}
+article h2 {
+  font-size: 0.9em;
+}
+
+/* ** ** Footer ** ** */
+
+/* ** ** Transitions ** ** */
+
+article a:hover {
+  color: orange;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  -ms-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  -ms-transition-duration: 300ms;
+  transition-duration: 300ms;
+    -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -ms-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+
+.background-fade {
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  -o-transition-property: background;
+  -ms-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  -ms-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.zoom {
+  -webkit-transition-property: transform;
+  -moz-transition-property: transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  -o-transition-duration: 400ms;
+  -ms-transition-duration: 400ms;
+  transition-duration: 400ms;
+}
+.zoom:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.rotate {
+  -webkit-transition-property: transform;
+  -moz-transition-property: transform;
+  -o-transition-property: transform;
+  -ms-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 700ms;
+  -moz-transition-duration: 700ms;
+  -o-transition-duration: 700ms;
+  -ms-transition-duration: 700ms;
+  transition-duration: 700ms;
+}
+.rotate:hover {
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+
+.skew {
+  -webkit-transform: skew(-5deg);
+  -moz-transform: skew(-5deg);
+  -o-transform: skew(-5deg);
+  -ms-transform: skew(-5deg);
+  transform: skew(-5deg);
+  -webkit-transition-property: transform;
+  -moz-transition-property: transform;
+  -o-transition-property: transform;
+  -ms-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  -o-transition-duration: 400ms;
+  -ms-transition-duration: 400ms;
+  transition-duration: 400ms;
+}
+.skew:hover {
+  -webkit-transform: skew(0deg);
+  -moz-transform: skew(0deg);
+  -o-transform: skew(0deg);
+  -ms-transform: skew(0deg);
+  transform: skew(0deg);
+}
+
+.shining {
+  -webkit-transition-property: text-shadow;
+  -moz-transition-property: text-shadow;
+  -o-transition-property: text-shadow;
+  transition-property: text-shadow;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  -o-transition-duration: 400ms;
+  -ms-transition-duration: 400ms;
+  transition-duration: 400ms;
+}
+.shining:hover {
+  text-shadow: 0px 7px 2px red;
+}
+
+.transparency {
+  opacity: 0.2;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  -o-transition-duration: 400ms;
+  -ms-transition-duration: 400ms;
+  transition-duration: 400ms;
+}
+.transparency:hover {
+  opacity: 1;
+}
+
+.color {
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  -o-transition-duration: 400ms;
+  -ms-transition-duration: 400ms;
+  transition-duration: 400ms;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -ms-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+.color:hover {
+  color: red;
+}

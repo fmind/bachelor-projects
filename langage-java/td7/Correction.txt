@@ -1,0 +1,91 @@
+
+
+
+//TP 7
+//Exercice 1
+
+package nombres;
+public class Entier{
+
+int x;
+
+public Entier(){
+x=0;
+}
+}
+
+import nombres.Entier;
+
+public class Test{
+
+
+public static void main(String[] args){
+
+Entier r = new Entier();
+System.out.println(r.x);//erreur de droit d'acces
+}
+}
+
+//Exercice 2
+
+java ProgrammeException 30 5
+x = 6
+
+java ProgrammeException 20 -5
+parametre de signe oppose
+x = 20
+
+java ProgrammeException 113 0
+Exception in thread "main" Exc1: division par zero
+        at ProgrammeException.methode1(ProgrammeException.java:14)
+        at ProgrammeException.methode2(ProgrammeException.java:22)
+        at ProgrammeException.main(ProgrammeException.java:31)
+
+
+//Exercice 3 questions 1 et 2
+
+public class Classe2 {
+
+
+	public static void methode3(Classe1 x){
+		try{
+			x.methode1();
+		}catch(E4 e){
+		}catch(E3 e){
+			StackTraceElement[] tab=e.getStackTrace();
+			for (StackTraceElement ste : tab){
+				System.out.println(ste.getMethodName());
+			}
+
+		}catch(E2 e){
+			System.out.println(e.getMessage());
+		}catch(E1 e){
+		}
+		finally{
+			x.methode2();
+		}
+
+	}
+
+
+public static void methode4(Classe1 x){
+		try{
+			x.methode1();
+		}catch(E4 e){
+		}catch(E3 e){
+		}catch(E2 e){
+			StackTraceElement[] tab=e.getStackTrace();
+			for (StackTraceElement ste : tab){
+				System.out.println(ste.getMethodName());
+			}
+		}catch(E1 e){
+			System.out.println(e.getMessage());
+
+		}
+		finally{
+			x.methode2();
+		}
+
+	}
+}
+

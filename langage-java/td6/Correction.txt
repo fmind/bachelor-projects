@@ -1,0 +1,161 @@
+//tp 6 Exercice 1
+
+public abstract class Animal{
+	protected String nom;
+	protected int age;
+	protected int agemax;
+	protected boolean vivant;
+	public static int count=0;
+
+
+	public void affiche(){
+		System.out.println("Nom : "+nom+" age : "+age+" age maximal : "+agemax+" vivant : "+vivant+" Nombre total d'animaux :"+count);
+	}
+	public void vieillir(){
+		age+=1;
+	}
+
+	public void mourir(){
+		vivant=false;
+		count--;
+	}
+	
+	public abstract void crier();
+
+}
+
+
+public class Chien extends Animal{
+	public String race;
+
+	public Chien(String nom, String race){
+		super.nom=nom;
+		this.race=race;
+		age=0;
+		agemax=25;
+		vivant=true;
+		count++;
+	}
+
+	public void crier(){
+		System.out.println("Ouah Ouah");
+	}
+
+}
+
+
+public class Oiseau extends Animal{
+
+	public Oiseau(String nom){
+		super.nom=nom;
+		age=0;
+		agemax=20;
+		vivant=true;
+		count++;
+	}
+
+	public void crier(){
+		System.out.println("Cui cui");
+	}
+}
+
+
+
+
+public class Test{
+public static void main(String[] args){
+System.out.println(Animal.count);
+Chien c = new Chien ("medor","pitbull");
+c.affiche();
+System.out.println(Animal.count);
+c.vieillir();
+c.affiche();
+System.out.println(Animal.count);
+c.mourir();
+c.affiche();
+System.out.println(Animal.count);
+Chien cc = new Chien ("medor2","pitbull");
+Chien ccc = new Chien ("medor3","pitbull");
+System.out.println(Animal.count);
+Oiseau cui = new Oiseau("cui");
+System.out.println(Animal.count);
+cui.crier();
+ccc.crier();
+}
+}
+
+
+//tp 6 Exercice 2
+//question 1
+
+/** implementation de types d'intervalles d'entiers*/ 
+
+class IntervalleEntier implements Element{ 
+
+	private int min,max; 
+	public IntervalleEntier(int min,int max){this.min=min;this.max=max;} 
+	public boolean estUnElement(Object o){ 
+		if (!(o instanceof Integer)) return false; 
+		else {
+			int v = ((Integer)o).intValue(); 
+			return ((v>=min)&& (v<=max)); 
+		} 
+	}
+}
+
+//question 2
+
+class EnsembleEntiers implements Element{ 
+
+	private int[] ens; 
+	public EnsembleEntiers(int[] ens){this.ens=ens;} 
+	public boolean estUnElement(Object o){ 
+		if (!(o instanceof Integer)) return false; 
+		else {
+			for (int j : ens){
+				if(j== ((Integer)o).intvalue()) {return true ;}
+			}
+			return false; 
+		} 
+	}
+}
+
+
+//question 3
+
+class Multiples implements Element{ 
+
+	private int m; 
+	public Multiples(int m){this.m=m;} 
+	public boolean estUnElement(Object o){ 
+		if (!(o instanceof Integer)) return false; 
+		else {
+			if((((Integer)o).intvalue())%j==0) {return true ;}
+			else{return false;} 
+		} 
+	}
+}
+
+//dernière question
+
+
+
+public class Test{
+
+
+public static void methodeGenerique( Element e, Object o){
+	if(e.estUnElement(o)){
+		System.out.println("Les interfaces permettent aussi de creer de nouveaux types generiques implementant des methodes donnees");
+	}
+}
+
+public static void main(String[] args){
+IntervalleEntier e = new IntervalleEntier(25,32);
+Integer i = new Integer(28);
+Test.methodeGenerique(e,i);
+}
+}
+
+
+
+

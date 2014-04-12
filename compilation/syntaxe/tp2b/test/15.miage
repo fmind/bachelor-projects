@@ -1,0 +1,11 @@
+/*
+ * Test génération de code : 
+ * adressage de variable locale, paramètre et resultat
+ */
+
+int f(int a){
+	int x;
+	x = a+1;
+	return x;
+ }
+

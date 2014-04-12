@@ -1,0 +1,224 @@
+//tp 3 exercice 1
+//harmonique
+
+public class Harmonique{
+
+public static double harmo(int n){
+	double res=0;
+	for (int i=0;i<n;i++){
+		res=res+(1.0/(i+1));
+	}
+	return res;
+}
+	
+
+	public static void main(String[] args){
+ 		System.out.println(harmo(1400));
+	}
+}
+
+
+
+//Harmonique>=lambda
+
+public class Harmobis{
+	static double res=0;
+		public static double harmo(double lambda){
+			int i =0;
+			while(res<lambda){
+				res=res+(1.0/(i+1));
+				i++;
+			}
+			return (int) i;
+		}
+
+		public static void main(String[] args){
+			 System.out.println(harmo(2)+" and "+res);
+		}
+}
+
+
+//cube chiffre
+public class CubeChiffre{
+	public static int cube(int i){
+		return i*i*i;
+	}
+
+	public static void main(String[] args){
+		for (int i=0;i<500;i++){
+			if (cube((i/100)%10)+cube((i/10)%10)+cube(i%10) == i){
+ 				System.out.println(i);
+			}
+		}
+	}
+}
+
+
+//entiers parfaits
+public class Parfait{
+	public static int diviseur(int i){
+		int res=0;
+		for (int j=1;j<i;j++){
+			if (i%j==0){res+=j;}
+		}
+	return res;
+}
+		
+
+	public static void main(String[] args){
+		for (int i=2; i<1000; i++){
+			if (diviseur(i)==i){System.out.println(i);}
+		}
+
+	}
+}
+
+//matrice et break
+
+
+
+
+
+public class MatBreak{
+	public static int nb(int[][] m){
+		int res=0;
+		for( int[] j: m){
+			for (int i : j){
+				if(i==1664){continue;}
+				else{res++;}
+			}
+		}
+	return res;
+	}
+
+	public static void main(String[] args){
+		int[][] mat={{1,2,3,4},{1664,5,6,7},{1664,8,9,1664},{1664,1664,1664,1664}};
+		System.out.println(nb(mat));
+	}
+}
+
+
+//switch
+
+public class SwitchTest{
+
+	public static void main(String[] args){
+		String test = args[0];
+		int i=test.indexOf("/");
+		int j=test.lastIndexOf("/");
+		int mois=Integer.parseInt(test.substring(i+1,j));
+		switch(mois){
+			case 1: System.out.println("Janvier");break;
+			case 2: System.out.println("Fevrier");break;
+			case 3: System.out.println("Mars");break;
+			case 4: System.out.println("Avril");break;
+			case 5: System.out.println("Mai");break;
+			case 6: System.out.println("Juin");break;
+			case 7: System.out.println("Juillet");break;
+			case 8: System.out.println("Aout");break;
+			case 9: System.out.println("Septembre");break;
+			case 10: System.out.println("Octobre");break;
+			case 11: System.out.println("Novembre");break;
+			case 12: System.out.println("Decembre");break;
+		}
+	}
+}
+
+
+_____________________________________________________
+//tp1 exercice 2
+//recurrence simple
+
+public class Test{
+
+	public static void f(int n){
+		if (n==0){ return;}
+		System.out.println(n);
+		f(n-1);
+	}
+
+	public static void main(String[] args){
+		f(35);
+
+	}
+}
+
+
+//récurrence inversée
+public class Test{
+
+	public static void f(int n){
+		if (n==0){ return;}
+		f(n-1);
+		System.out.println(n);
+	}
+
+	public static void main(String[] args){
+		f(35);
+	}
+}
+
+//Fibonacci
+public class Test{
+
+	public static int fibo(int n){
+		if (n==0){ return 1;}
+		if (n==1){return 1;}
+		return fibo(n-1)+fibo(n-2);
+	}
+
+	public static void main(String[] args){
+		System.out.println(fibo(4));
+	}
+}
+
+//Arbre
+
+public class Arbre{
+	public int num;
+	public Arbre filsg;
+	public Arbre filsd;
+	public int max;
+ 
+	public Arbre(){
+	num=(int) Math.random()*100;
+	filsg=null;
+	filsd=null;
+	}
+
+	public Arbre(int n){
+		if (n==0){num=(int) (Math.random()*100); System.out.println(num);
+			filsg=null;
+			filsd=null;
+			System.out.println("Feuille");}
+		else{
+			num=(int) (Math.random()*100); System.out.println(num);
+			filsg=new Arbre (n-1) ;
+			filsd=new Arbre (n-1);
+		}
+	
+	}
+
+	public int maxi(){
+		if (filsg==null && filsd==null){return num;}
+		else{return Math.max(num,Math.max(filsg.maxi(),filsd.maxi()));}
+	}
+
+	
+	public void changeValeur(int n){
+	if(num==n){num=0;}
+	if (filsg!=null && filsd != null){filsg.changeValeur(n);filsd.changeValeur(n);}
+	}
+
+}
+
+
+public class Test{
+	public static void main(String[] args){
+		Arbre t =new Arbre(3);
+		int s = t.maxi();
+		System.out.println(s);
+		t.changeValeur(s);
+		System.out.println(t.maxi());
+	}
+}

@@ -1,0 +1,16 @@
+/*
+ * Test génération de code : le data segment
+ * DATA SEGMENT
+ * 	i DW 0
+ *	j DW ?
+ *	k DW ?
+ * DATA ENDS
+ */
+ 
+ int i =0;
+ int j, k;
+ 
+ void main(){
+	k = 0;
+ }
+ 

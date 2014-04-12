@@ -1,0 +1,650 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0mm
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 0 17 -1
+\bullet 1 0 15 -1
+\bullet 2 0 0 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+\size giant
+RAPPORT : 
+\begin_inset Newline newline
+\end_inset
+
+Machine de Turing
+\end_layout
+
+\begin_layout Author
+
+\series bold
+\size larger
+Médéric Hurier
+\series default
+\size default
+ mederic.hurier@etudiant.univ-nancy2.fr
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+\size larger
+Sabrina
+\series default
+\size default
+ 
+\series bold
+\size larger
+Arab
+\series default
+\size default
+ sabrina.arab@etudiant.univ-nancy2.fr
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+\size larger
+Hamid
+\series default
+\size default
+ 
+\series bold
+\size larger
+Fnighar
+\series default
+\size default
+ hamid.fnighar@etudiant.univ-nancy2.fr
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Licence ISC parcours MIAGE
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/mederic/.lyx/clipart/nancy2.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Année 2011-2012
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Guide d'utilisation
+\end_layout
+
+\begin_layout Subsection
+Contenu de l'archive
+\end_layout
+
+\begin_layout Standard
+L'archive contient tous les fichiers nécessaires pour comprendre et utiliser
+ une machine de Turing.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/arboresence.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+build objets intermédiaires au format 
+\begin_inset Quotes sld
+\end_inset
+
+.class
+\begin_inset Quotes srd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+dist exécutable de l'application au format 
+\begin_inset Quotes sld
+\end_inset
+
+.jar
+\begin_inset Quotes srd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+doc rapport et énoncé du projet au format 
+\begin_inset Quotes sld
+\end_inset
+
+.lyx
+\begin_inset Quotes srd
+\end_inset
+
+ et 
+\begin_inset Quotes sld
+\end_inset
+
+.pdf
+\begin_inset Quotes srd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+nbproject configuration de l'environnement de développement (NetBeans)
+\end_layout
+
+\begin_layout Description
+src sources du programme au format 
+\begin_inset Quotes sld
+\end_inset
+
+.java
+\begin_inset Quotes srd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+src/calculateur paquet calculateur.
+ Contient plusieurs machines de Turing configurées (addition binaire, division
+ ...)
+\end_layout
+
+\begin_layout Description
+src/turing paquet turing avec les classes modélisant une machine de Turing
+\end_layout
+
+\begin_layout Subsection
+Exemples
+\end_layout
+
+\begin_layout Standard
+Le code java peut être compilé sur votre machine, indépendement de votre
+ plateforme.
+ Vous pouvez également utiliser le format distribué java.
+\end_layout
+
+\begin_layout Standard
+Pour cela, lancer le fichier MachineTuring/dist/MachineTuring.jar
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/utilisation.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'application fonctionne comme un interpréteur qui attend les commandes
+ de l'utilisateur.
+\end_layout
+
+\begin_layout Standard
+Suite d'instructions simples: 
+\begin_inset Quotes sld
+\end_inset
+
+use Decaleur
+\begin_inset Quotes srd
+\end_inset
+
+, 
+\begin_inset Quotes sld
+\end_inset
+
+help
+\begin_inset Quotes srd
+\end_inset
+
+, 
+\begin_inset Quotes sld
+\end_inset
+
+run 0 1 0 1
+\begin_inset Quotes srd
+\end_inset
+
+, 
+\begin_inset Quotes sld
+\end_inset
+
+exit
+\begin_inset Quotes srd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Conception
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Les attributs des classes ont une visibilité public sur les diagrammes afin
+ d'être affichés sur celui -ci
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Modélisation d'une machine de Turing
+\end_layout
+
+\begin_layout Standard
+Ce diagramme de classes représente une machine de Turing et ses composants
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/turing.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Interfaces:
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Executable
+\noun default
+: fonctions communes que l'on attend d'une machine.
+ Utiliser par la classe abstraite Calculateur pour implémenter le patron
+ de conception 
+\begin_inset Quotes sld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Adaptateur"
+target "http://fr.wikipedia.org/wiki/Adaptateur_(patron_de_conception)"
+
+\end_inset
+
+
+\begin_inset Quotes srd
+\end_inset
+
+ et faciliter l'utilisation des machines.
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+AvecMouvement
+\noun default
+: Constantes de mouvement pour les transitions (GAUCHE, DROITE, IMMOBILE)
+\end_layout
+
+\begin_layout Paragraph
+Classes:
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Etat
+\noun default
+: État intermédiaire et non valide d'une machine.
+ Il est auto-incrémenté à l'aide d'un compteur interne 
+\begin_inset Quotes sld
+\end_inset
+
+serial
+\begin_inset Quotes srd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+EtatFinal
+\noun default
+: classe dérivée d'un état.
+ Les états finaux sont valides.
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Transition
+\noun default
+: Fonction de transition delta(q,s) = (p,r,d)
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+TableTransition
+\noun default
+: Collection de transitions pour une machine.
+ Délègue le traitement de recherche en plus d'encapsuler la structure interne
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Ruban
+\noun default
+: Périphérique d'entrée d'une machine composée d'une liste de symbole accessible
+ en lecture et en écriture avec une position courante
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+FinExecution
+\noun default
+: Exception levée à la fin d'exécution d'une machine (réussite ou échec)
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+MachineTuring
+\noun default
+: Une machine est composée d'une liste d'état, d'une table de transition
+ et d'un ruban pour un alphabet.
+ Son état courant est stockée pour l'exécution.
+ On peut choisir un mot, exécuter la machine et afficher son état ou sa
+ configuration.
+ 
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lancement des machines
+\end_layout
+
+\begin_layout Standard
+Pour faciliter l'utilisation des machines, des calculateurs sont chargés
+ de configurer les états et les transitions
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/lanceur.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Classes:
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Calculateur
+\noun default
+: Classe abstraite composée d'une machine de Turing configurée.
+ Affiche l'aide et le temps d'exécution
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Décaleur
+\noun default
+: Calculateur décalant le mot d'un nombre de symbole égal à sa taille ('0
+ 1 1' donne 'e e e 0 1 1')
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+Un_E_Zero
+\noun default
+: Calculateur remplaçant les symboles d'un mot pour obtenir une suite de
+ 1, un E et une suite de zéro ('1 0 1 E 1 1' donne 1 '1 1 E 0 0')
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+DivisionBinairePar2
+\noun default
+: Calculateur retournant la division binaire par 2 d'un mot ('1 1 0 1 0'
+ donne '1 1 0 0')
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+AdditionBinaire
+\noun default
+: Calcul l'addition binaire entre deux nombres binaires ('1 1 0 1 1 + 1
+ 1 0 1 1 =' donne '0 1 1 0 1 1').
+ Le résultat est affiché à l'envers
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+MultiplicationBinaire
+\noun default
+: Effectue la division binaire entre deux nombres binaires ('1 0 0 x 1 1
+ 0 1 =' donne '1 1 0 1 0 0').
+ Si le premier terme est composé de plus d'un symbole '1', affiche une suite
+ d'addition
+\end_layout
+
+\begin_layout Itemize
+
+\noun on
+LanceurTuring
+\noun default
+: Classe principale du programme.
+ Interpréteur de commandes utilisateurs en ligne de commande.
+\end_layout
+
+\begin_layout Section
+Difficultés
+\end_layout
+
+\begin_layout Subsection
+Réalisation des machines de Turing
+\end_layout
+
+\begin_layout Standard
+L'étape la plus délicate du projet était la réalisation des machines de
+ Turing.
+ Chaque configuration nécessite beaucoup de réflexion, et il devient vite
+ nécessaire de faire des schémas.
+\end_layout
+
+\begin_layout Standard
+Par exemple, ce diagramme d'état représente la machine permettant d'effectuer
+ une addition binaire.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename images/addition.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La modélisation d'une machine est pourtant simple, mais cette simplicité
+ a une influence sur la complexité des programmes réalisés par la suite.
+\end_layout
+
+\begin_layout Subsection
+Mesure du temps d'exécution
+\end_layout
+
+\begin_layout Standard
+Pour observer le rapidité d'une machine à traiter un mot, plusieurs méthodes
+ sont envisageables, chacune avec ses avantages et ses inconvénients:
+\end_layout
+
+\begin_layout Standard
+- Temps en millisecondes: durée réelle que met la machine à calculer le
+ résultat.
+ Dépend des ressources disponibles sur la machine mais permet de mesurer
+ l'efficacité de la modélisation par analyse statistique
+\end_layout
+
+\begin_layout Standard
+- Temps en nombre d'étape: permet de tester l'efficacité de la machine elle
+ même.
+ Moins le nombre d'étape est important, et plus la machine est efficace
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ces deux solutions sont affichées suite à l'exécution d'un mot.
+ Les calculs peuvent vite devenir très long selon la complexité du mot en
+ entrée.
+\end_layout
+
+\begin_layout Standard
+Par exemple, la multiplication binaire pour le mot 
+\begin_inset Quotes sld
+\end_inset
+
+1 1 1 1 1 1 1 1 1 1 1 x 1 0 1 0 1 0 1 0 1 0 =
+\begin_inset Quotes srd
+\end_inset
+
+ prend presque 40 secondes et 27682 étapes
+\end_layout
+
+\end_body
+\end_document

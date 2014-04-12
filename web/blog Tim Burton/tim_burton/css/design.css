@@ -1,0 +1,314 @@
+@charset "utf-8";
+
+/* ** ** COMMON ** ** */
+
+/* Functions */
+
+.hide { display: none; }
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+.align_left { text-align: left; }
+.align_center { text-align: center; }
+.align_right { text-align: right; }
+.errorMessage, .errorSummary { color: red;}
+.successMessage { color: green; }
+
+/* Rules */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+blockquote, ul, ol {
+  margin-left: 3em;
+}
+
+img {
+  border: none;
+}
+
+/* Colors */
+
+body {
+  background: #000000 url(../images/background.jpg) no-repeat center top;
+  font-family: 'Satisfy', cursive;
+  color: #4E515B;
+}
+
+.classic_font {
+  font: normal 13px Georgia, "Times New Roman", Times, serif;
+}
+
+h1, h2, h3, h4 {
+  color: #CDCDE2;
+}
+
+h1:hover, h2:hover, h3:hover,  h4:hover {
+  color: orange;
+  text-shadow: 0px 0px 25px orange;
+  transition-property: color, text-shadow;
+  transition-duration: 1s;
+}
+
+a {
+  text-decoration: none;
+  color: #CDCDE2;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: yellow;
+  transition: color 1.2s;
+}
+
+/* ** ** BLOCKS ** ** */
+
+/* Header */
+
+header {
+  width: 700px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+header h1 {
+  padding: 60px 0 0 325px;
+  text-transform: uppercase;
+  letter-spacing: -5px;
+  font-size: 66px;
+  font-weight: normal;
+}
+
+header h2 {
+  margin: -10px 0 0 0;
+  padding: 0 0 0 325px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+header a {
+  color: #FFF;
+  text-shadow: 0px 0px 15px white;
+}
+
+header a:hover {
+  text-decoration: none;
+  position: relative;
+  left: 10%;
+  color: orange;
+  transition-property: left, color;
+  transition-duration: 1.2s;
+}
+
+/* Navigation */
+
+nav {
+  width: 700px;
+  height: 75px;
+  margin: 0 auto;
+}
+
+nav ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  display: block;
+  float: left;
+  height: 34px;
+  padding: 16px 30px 0 40px;
+  background: url(../images/puce-titre.gif) no-repeat 0px 0px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #4E515B;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: #000000 url(../images/puce-titre.gif) no-repeat 5px 50%;
+  text-decoration: none;
+  color: white;
+  transition: background 1.2s;
+}
+
+nav .first a {
+  border: none;
+}
+
+nav .active a {
+  background: #000000 url(../images/puce-titre.gif) no-repeat 5px 50%;
+  color: white;
+  text-decoration: underline;
+}
+
+/* Page */
+
+#page {
+  width: 700px;
+  margin: 0 auto;
+}
+
+/* Content */
+
+section#content {
+  width: 420px;
+  min-height: 350px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  float: right;
+  background: url(../images/barre-verticale-complement.gif) no-repeat;
+}
+
+/* Sidebar */
+
+aside {
+  width: 200px;
+  padding: 0 20px;
+  background: url(../images/barre-verticale.gif) no-repeat right top;
+}
+
+#social {
+  height: 45px;
+  padding: 8px;
+}
+
+/* Sidebar > Menu */
+
+aside .menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+aside .menu li {
+  padding: 8px 0;
+  background: url(../images/barre-horizontale.gif) repeat-x left bottom;
+}
+
+aside .menu .first li {
+  background: none;
+}
+
+/* Footer */
+
+footer {
+  margin: 0 auto;
+  padding: 20px;
+  background: url(../images/barre-horizontale.gif) repeat-x;
+  opacity: 0.4;
+}
+
+footer:hover {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ** ** STYLES ** ** */
+
+/* Boxed */
+
+.boxed hgroup {
+  padding: 5px 0;
+  background: url(../images/barre-horizontale.gif) repeat-x left bottom;
+}
+
+.boxed hgroup h2 {
+  padding-left: 55px;
+  background: url(../images/bobine.gif) no-repeat 5px 50%;
+  text-transform: uppercase;
+  font-size: 100%;
+}
+
+.boxed .content {
+  padding: 10px;
+}
+
+/* Post */
+
+article hgroup {
+  margin: 0px 0px 20px 0px;
+  padding: 5px 0;
+  background: url(../images/barre-horizontale.gif) repeat-x left bottom;
+}
+
+article hgroup h1 {
+  font-size: 25px;
+}
+
+article hgroup h3 {
+  font-size: 13px;
+  padding: 0px 5px;
+}
+
+article .commentaire h4 span {
+  color: #CDCDE2;
+}
+
+/* Films */
+
+.film h2 {
+  clear: right;
+}
+
+.film .affiche img {
+  margin: 5px 35px 5px 0px;
+  box-shadow: 0px 0px 20px white;
+}
+
+.film .affiche img:hover {
+  box-shadow: 0px 0px 20px orange;
+  transition: box-shadow 500ms;
+}
+
+/* Forms */
+
+form .row {
+  margin: 10px 0px;
+}
+
+form .row label {
+  display: inline-block;
+  width: 33%;
+}
+
+form .row input {
+  display: inline-block;
+  width: 60%;
+}
+
+form .errorMessage {
+  text-align: right;
+  margin: 2px 20px;
+}
+
+form .catchpa img {
+  float: left;
+  margin: 0px 20px;
+}
+
+/* Others */
+
+.slideshow {
+  margin: auto;
+}
+
+.surbrillance:hover {
+  color: white;
+  text-shadow: 0px 0px 2px white;
+  transition: color 500ms;
+}

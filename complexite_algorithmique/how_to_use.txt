@@ -1,0 +1,11 @@
+Pour nettoyer le fichier utilisable par la classe de Test :
+java Cleaner <entree> <sortie>
+
+Pour lancer les tests :
+java -Xms6144m TestComplet [chemin_fichier] [nb_repertitions]
+
+Deux fichiers en sortie de cette exécution.
+- Test.csv : Donne la consommation mémoire totale, le temps mesure a l'horloge, et le temps CPU
+- TestComplet.csv : Donne les memes valeurs que Test.csv a l'exception que les mesures sont realisees toutes les 4 000 000 d'insertions
+
+Configuration minimale pour exécuter les tests : 6Go de RAM

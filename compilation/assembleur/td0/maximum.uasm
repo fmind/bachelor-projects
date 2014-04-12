@@ -1,0 +1,95 @@
+| Traduction du programme C ci-dessous en assembleur Beta (Bsim).
+
+| ------------------------------ Programme C a traduire
+
+| int tab[] = {9, 35, 3, 7, 40, 15};
+| #define n sizeof(tab);
+|  
+| int max = 0;
+|
+| for (int i = 0, i < n; i++){
+|	int value = tab[i];
+|	if (value > max){
+|		max = value;
+|	}
+| }
+
+| ------------------------------ Inclusions
+
+.include lib/beta.uasm
+
+| ------------------------------ Debut du programme
+
+. = 0
+	BR(maximum)
+
+| ------------------------------ Declarations
+
+| Tableau
+tab:
+	LONG(9)
+	LONG(35)
+	LONG(3)
+	LONG(7)
+	LONG(40)
+	LONG(15)
+
+| Taille du tableau
+eot = .			| End of Table
+size = (eot-tab)/4
+
+| ------------------------------ Fonctions
+
+| Trouve la valeur maximale d'un tableau
+maximum:
+	| Variables internes
+	max = R24	| Valeur maximale
+	CMOVE(0, max)
+	i = R8		| Indice courant
+	CMOVE(0, i)
+	index = R9	| Index de la case du tableau (a partir de i)
+	CMOVE(0, index)
+	eof = R16	| End of For (fin de boucle)
+	CMOVE(0, eof)
+	value = R0	| Valeur courante (a partir de l'index)
+	test = R17	| Test pour remplacer le maximum par la valeur courante
+
+	| Lance la boucle
+	BR(maximum_for)
+
+
+| Parcours le tableau jusqu'au dernier element
+maximum_for:
+	| Condition de sortie de boucle: i < size
+	CMPLTC(i, size, eof)	
+	BF(eof, maximum_end_for)
+	
+	| Recupere la nouvelle valeur pour un test
+	LD(index, tab, value)
+	CMOVE(0, test)
+
+	| Remplace le maximum par la valeur si: max < value
+	CMPLT(max, value, test)
+	BT(test, maximum_swap)
+
+
+| Continue le parcours du tableau
+maximum_next:
+	ADDC(i, 1, i)
+	MULC(i, 4, index)
+	BR(maximum_for)
+
+
+| Remplace le maximum par la valeur courante
+maximum_swap:
+	MOVE(value, max)
+	BR(maximum_next)
+
+| Fin de boucle: nettoie les registres et affiche la valeur dans R24
+maximum_end_for:
+	CMOVE(0, value)
+	CMOVE(0, i)
+	CMOVE(0, index)
+	CMOVE(0, test)
+	CMOVE(0, eof)
+	HALT()

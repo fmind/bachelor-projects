@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/* ** ** Site gradients & fonts & colors ** ** */
+
+body {
+  background-color: lightgrey;
+  color: black;
+}
+
+/* ** ** Functions ** ** */
+
+.hide {
+  display: none;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.align_left {
+  text-align: left;
+}
+.align_center {
+  text-align: center;
+}
+.align_right {
+  text-align: right;
+}
+.space-bot {
+  margin-bottom: 20px;
+}
+.space-top {
+  margin-top: 20px;
+}
+.space-sides {
+  margin: 0px 20px;
+}
+.space-inside {
+  padding: 15px;
+}
+
+/* ** ** Other ** ** */
+
+canvas {
+  border:1px solid;
+}

@@ -1,0 +1,27 @@
+TP n°0 - Compilation - 2010/2011
+
+Traduire le programme suivant en assembleur Beta.
+
+-------------------------------------------
+int tab[] = {9, 35,3, 7, 40, 15};
+#define n sizeof(tab);
+ 
+int max = 0;
+
+for (int i = 0, i < n; i++){
+	int value = tab[i];
+	if (value > max){
+		max = value;
+	}
+}
+-----------------------------------------
+
+A faire:
+- Ecrire un programme assembleur
+- Le tester sous BSIM
+
+A rendre:
+- le programme source
+- un état de votre travail (ce qui marche et ce qui ne marche pas)
+
+Date limite : 3 février 2011 23:55

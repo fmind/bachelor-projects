@@ -1,0 +1,235 @@
+
+
+
+
+
+//tp4 Exercice 2
+//Fichier Vehicule.java
+
+package ex1;
+
+public class Vehicule {
+  private   boolean moteur;
+  private   int vitesseMax;
+
+  public Vehicule() {
+    moteur = false;
+    vitesseMax = 0;
+  }
+
+  public Vehicule(boolean m, int v){
+    moteur = m;
+    vitesseMax = v;
+  }
+
+  public String toString(){
+    String S="\nvehicule ";
+    if (moteur)
+      S=S+"a moteur, ";
+    else
+      S=S+"sans moteur, ";
+    S=S+"dont la vitesse maximale est de "+vitesseMax+"km/h";
+    return S;
+  }
+
+  public void Vmax(){
+    System.out.println("\nvitesse max : "+vitesseMax+" km/h\n");
+  }
+
+  public boolean getMoteur () {
+    return moteur;
+  }
+
+  public int getVitesseMax() {
+    return vitesseMax;
+  }
+
+  public static void main(String[] args){
+    Vehicule v1=new Vehicule(true,121);
+    System.out.println(v1);
+    v1.Vmax();
+  }
+}
+
+//Fichier Voiture_Composee.java
+ 
+package ex1;
+
+public class Voiture_Composee {
+  private Vehicule v;
+  private int nombreDePortes;
+
+  public Voiture_Composee()
+  {
+    v = new Vehicule();
+    nombreDePortes = 2;
+  }
+
+  public Voiture_Composee(boolean m, int vit, int n){
+    v = new Vehicule(m,vit);
+    nombreDePortes = n;
+  }
+
+  public String toString(){
+    String S;
+    S = v.toString();
+    S = S+" C'est une voiture de " + nombreDePortes + " portes.\n";
+    return S;
+  }
+
+
+  public static void main(String[] args)
+  {
+    Voiture_Composee v1 = new Voiture_Composee(true,152,4);
+    System.out.println(v1);
+    System.out.println(v1.nombreDePortes);
+    System.out.println(v1.v.getVitesseMax());
+    System.out.println(v1.v.getMoteur());
+    v1.v.Vmax();
+  }
+}
+
+//Fichier Voiture_Derivee.java
+
+
+package ex1;
+
+public class Voiture_Derivee extends Vehicule {
+  private int nombreDePortes;
+
+  public Voiture_Derivee() {
+    super();
+    nombreDePortes = 2;
+  }
+
+  public Voiture_Derivee(boolean m,int v,int n) {
+    super(m,v);
+    nombreDePortes = n;
+  }
+
+  public String toString(){
+    String S;
+    S=super.toString();
+    S=S+" C'est une voiture de " + nombreDePortes + " portes.\n";
+    return S;
+  }
+
+  public static void main(String[] args)
+  {
+    Voiture_Derivee v1 = new Voiture_Derivee(true,150,2);
+    System.out.println(v1);
+    System.out.println(v1.getMoteur());
+    System.out.println(v1.getVitesseMax());
+    System.out.println(v1.nombreDePortes);
+    v1.Vmax();
+  }
+}
+
+//Fichier Main.java
+
+package ex1;
+
+public class Main {
+  public static void main(String[] args) {
+
+    System.out.println("\nVoiture composee\n================\n");
+    Voiture_Composee v1 = new Voiture_Composee(true, 152, 4);
+    System.out.println(v1);
+ //   v1.v.Vmax(); il faut une methode getVehicule() dans Voiture_Composee
+ 
+    System.out.println("\nVoiture Derivee\n===============\n");
+    Voiture_Derivee v2 = new Voiture_Derivee(true, 150, 2);
+    System.out.println(v2);
+    v2.Vmax();
+  }
+}
+
+
+
+
+//Exercice 3
+//Fichier Liquide.java
+
+package ex2;
+
+public class Liquide {
+
+  public void imprimer(){
+    System.out.println("je suis un liquide");
+  }
+
+}
+
+//Fichier Cafe.java
+
+package ex2;
+
+public class Cafe extends Liquide {
+
+  public void imprimer() {
+    System.out.println("je suis du cafe");
+  }
+
+}
+
+//Fichier Lait.java
+
+package ex2;
+
+public class Lait extends Liquide{
+
+  public void imprimer(){
+    System.out.println("je suis du lait");
+  }
+
+}
+
+//Fichier Tasse.java
+
+package ex2;
+
+public class Tasse {
+
+  private Liquide l;
+
+  public void AjouterLiquide (Liquide l) {
+    this.l = l;
+  }
+
+  public void imprimer() {
+    l.imprimer();
+  }
+}
+
+
+// Fichier Main.java
+
+package ex2;
+
+public class Main {
+
+  public static void main(String[] args) {
+
+    Tasse latasse;
+    latasse=new Tasse();
+    latasse.AjouterLiquide(new Liquide());
+    latasse.imprimer();
+
+    latasse=new Tasse();
+    latasse.AjouterLiquide(new Cafe());
+    latasse.imprimer();
+
+    Tasse[] lestasses;
+    lestasses = new Tasse[3];
+    for (int i=0;i<3;i++)
+      lestasses[i]= new Tasse();
+
+    lestasses[0].AjouterLiquide(new Cafe());
+    lestasses[1].AjouterLiquide(new Lait());
+    lestasses[2].AjouterLiquide(new Liquide());
+
+    for (int i=0;i<3;i++)
+      lestasses[i].imprimer();
+
+  }
+}

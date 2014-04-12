@@ -1,0 +1,176 @@
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[french]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\setlength{\parindent}{0mm}
+\usepackage{color}
+\usepackage{babel}
+\addto\extrasfrench{%
+   \providecommand{\og}{\leavevmode\flqq~}%
+   \providecommand{\fg}{\ifdim\lastskip>\z@\unskip\fi~\frqq}%
+}
+
+\usepackage{latexsym}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=false,
+ breaklinks=false,pdfborder={0 0 0},backref=section,colorlinks=true]
+ {hyperref}
+\hypersetup{
+ pdfauthor={Médéric Hurier}}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+\AtBeginDocument{
+  \def\labelitemi{\(\rhd\)}
+  \def\labelitemii{\(\triangleright\)}
+  \def\labelitemiii{\normalfont\bfseries{--}}
+}
+
+\makeatother
+
+\begin{document}
+
+\title{\textbf{\Huge Bibliothèque de gestion de table}}
+
+
+\author{\textbf{\Large Médéric Hurier}\\
+mederic.hurier@etudiant.univ-nancy2.fr\\
+Licence ISC parcours MIAGE}
+
+\maketitle
+\bigskip{}
+
+
+\bigskip{}
+
+
+\begin{center}
+\includegraphics{\lyxdot \lyxdot /\lyxdot \lyxdot /\lyxdot \lyxdot /\lyxdot \lyxdot /\lyxdot \lyxdot /\lyxdot lyx/clipart/nancy2}
+\par\end{center}
+
+\vfill{}
+
+
+
+\date{Année 2011-2012\newpage{}}
+
+\tableofcontents{}\newpage{}
+
+
+\section{Utilisation}
+
+
+\subsection{Compilation}
+
+Pour compiler le programme, exécutez la commande ''make'' dans le
+répertoire contenant les sources. Le résultat de cette étape est un
+exécutable nommé ''test\_table'' au même niveau que le ''Makefile''.\\
+
+
+Les fichiers intermédiaires (.o) sont automatiquement supprimés.
+
+
+\subsection{Exécution}
+
+Le programme ne prend qu'un seul paramètre: le nombre d'entrée dans
+la table de hachage.\emph{ Il ne s'agit pas d'une limite sur le nombre
+total d'enregistrement} pouvant être stocké, mais d'un indice de répartition.
+Le jeu de donné du programme allant jusqu'à 15 éléments, vous pouvez
+passer un nombre strictement positif, inférieur ou supérieur à 15.\\
+
+
+La valeur par défaut est de 255. On peut noter que avec une valeur
+égale à 1, la bibliothèque se comporte comme une liste chainée.\\
+
+
+Quelques exemples d'utilisation:
+\begin{itemize}
+\item './test\_table'
+\item './test\_table 3'
+\item './test\_table 6000'
+\end{itemize}
+
+\subsection{Résultat}
+
+Le résultat de l'exécution affiche les états de la table après plusieurs
+opérations:
+\begin{itemize}
+\item Création de la table
+\item Insertions de clés/valeur
+\item Suppression de valeur
+\item Recherche par paire de clé
+\item Destruction de la table (libération de la mémoire)\\
+
+\end{itemize}
+Les données d'entrées sont les candidats à l'élection présidentielle
+de 2012.\\
+
+
+Voici une ligne de résultat: \emph{''90 : \{'HervéMorin'= Nouveau
+Centre\}''}
+\begin{itemize}
+\item 1725 est le numéro de la case de la table
+\item 'HervéMorin' est la concaténation des clés (nom et prénom)
+\item 'Nouveau Centre' est la valeur de la clé (n-uplet)\\
+
+\end{itemize}
+Vous pouvez faire varier le paramètre d'entrée, et oberserver comment
+les collisions sont gérées.
+
+\newpage{}
+
+
+\section{Algorithmes et structures}
+
+
+\subsection{Table de hachage}
+
+La bibliothèque implémente une \href{https://fr.wikipedia.org/wiki/Table_de_hachage}{table de hachage}.
+C'est \emph{une structure efficace}, car elle permet un accès et une
+insertion en O(1) dans la plupart des cas.\\
+
+
+Une table de hachage permet de répartir les enregistrements dans des
+cases selon une fonction de hachage. Le nombre de case est fixe, mais
+elle peut gérer plus d'enregistrement et de manière plus sûr en gérant
+les collissions. La façon la plus simple de les gérer est de créer
+une liste chaînée pour chaque case.\\
+
+
+Voici un diagramme présentant les structures de l'application.
+
+\begin{figure}[H]
+\begin{centering}
+\includegraphics[scale=0.5]{diagrammes/structures}
+\par\end{centering}
+
+\caption{Structures de l'application}
+\end{figure}
+Détail des champs de la table de hachage:
+\begin{itemize}
+\item length: nombre de case de la table
+\item counter: nombre d'élément présent dans la table (utilise un compteur
+pour éviter de parcourir toute la table)
+\item records: une liste de pointeur vers des enregistrements
+\item hashfunction: fonction de hachage
+\end{itemize}
+
+\subsection{Fonction de hachage}
+
+Le but d'une fonction de hachage est de renvoyer l'index d'une case
+pour une clé (une paire de chaîne de caractère). De nombreux algorithmes
+existent, avec des divergences en terme de rapidité et d'efficacité.\\
+
+
+En analysant plusieurs fonctions j'ai sélectionné l'algorithme SDBM
+expliqué sur \href{http://www.cse.yorku.ca/~oz/hash.html}{cette page}.
+Il a l'avantage d'être rapide, générique et public.
+\end{document}

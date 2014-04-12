@@ -1,0 +1,9 @@
+/*
+ * Test pour savoir si le compilo fonctionne
+ */
+ int i;
+ 
+ void main(){
+	 i= 0;
+ }
+ 

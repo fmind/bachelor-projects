@@ -1,0 +1,1139 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0mm
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 1 0 9 -1
+\bullet 2 0 0 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 1
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+\size giant
+T'Change
+\end_layout
+
+\begin_layout Author
+
+\series bold
+\size larger
+Médéric Hurier
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Quentin Burtschell
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Florent Henry
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/.lyx/clipart/nancy2.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+2011-2012
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Presentation of the subject
+\end_layout
+
+\begin_layout Standard
+The subject asks to elaborate a human-machine interface in the form of a
+ website.
+ This website’s aim is to allow the users to barter their goods.
+ The interface was designed with the following constraints:
+\end_layout
+
+\begin_layout Itemize
+To respect the standards required by the web
+\end_layout
+
+\begin_layout Itemize
+To allow an immediate handling
+\end_layout
+
+\begin_layout Itemize
+To give information where necessary
+\end_layout
+
+\begin_layout Itemize
+To make interactions intuitive
+\end_layout
+
+\begin_layout Section
+Methodology of conception
+\end_layout
+
+\begin_layout Standard
+Each following item matches a different step in the interface’s conception.
+\end_layout
+
+\begin_layout Subsection
+Definitions
+\end_layout
+
+\begin_layout Standard
+We first defined the website’s use.
+ The following rules allow us to set up definite interfaces and processes.
+ With these transparent rules, we wanted to avoid the user to feel lost.
+ Simplicity is the main idea.
+\end_layout
+
+\begin_layout Subsubsection
+The item
+\end_layout
+
+\begin_layout Standard
+A swap can only be done with goods.
+ Services can not be swapped (for now).
+\end_layout
+
+\begin_layout Subsubsection
+The swap
+\end_layout
+
+\begin_layout Standard
+The swap is on a one to one basis.
+ It is therefore only possible to swap a good for another good.
+ Barter cancels an item’s financial value ; checking that the swap is fair
+ is the users’ responsibility.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Communication
+\end_layout
+
+\begin_layout Standard
+The swap process concerns the item.
+ The communication between the supplier and the seeker is reduced to the
+ item.
+\end_layout
+
+\begin_layout Subsection
+Users’ profiles
+\end_layout
+
+\begin_layout Standard
+On a barter website, there are two main uses, therefore two types of user:
+ the one who supplies something to swap, and the one who is looking for
+ something to swap.
+ Here are non-exhaustive lists of possible motivations, for the two different
+ profiles.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+The supplier
+\end_layout
+
+\begin_layout Standard
+The supplier can have different reasons to put an item at disposal:
+\end_layout
+
+\begin_layout Itemize
+No or no more use of the item (ex: toddler’s clothes)
+\end_layout
+
+\begin_layout Itemize
+No or no more space (ex: moving away, cumbersome gift)
+\end_layout
+
+\begin_layout Itemize
+No or no more time (ex: video game, exercise bicycle)
+\end_layout
+
+\begin_layout Itemize
+Old-fashioned (ex: furniture, decorations) Used (ex: book, video game)
+\end_layout
+
+\begin_layout Itemize
+Recycling (ex: will to give an old TV a second life)
+\end_layout
+
+\begin_layout Itemize
+Savings (ex: to put a rare item at disposal in order to swap it for another
+ useful item)
+\end_layout
+
+\begin_layout Itemize
+Sentimentality (ex: not wanting an item to be destroyed)
+\end_layout
+
+\begin_layout Subsubsection
+The seeker
+\end_layout
+
+\begin_layout Standard
+We identified here a list of possible reasons for someone to look for an
+ item:
+\end_layout
+
+\begin_layout Itemize
+Free (complementary to “no more use”)
+\end_layout
+
+\begin_layout Itemize
+Newness (ex: liking to change the content of a wardrobe often
+\end_layout
+
+\begin_layout Itemize
+Seeking a good deal or an added value (ex: professionals)
+\end_layout
+
+\begin_layout Itemize
+Impulsivity (ex: to consume)
+\end_layout
+
+\begin_layout Itemize
+To complete a collection (ex: stamps, dishes, spoons)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To find an item unavailable anywhere else (ex: 1602 waffle iron)
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+The user’s expectancies
+\end_layout
+
+\begin_layout Standard
+The concern here is to be aware of which items make the users stay or leave.
+ Here is a list of rules to follow:
+\end_layout
+
+\begin_layout Itemize
+To use legible and harmonious colours and writings
+\end_layout
+
+\begin_layout Itemize
+To respect a colour-code: one type of action = one colour (ex: adding an
+ item)
+\end_layout
+
+\begin_layout Itemize
+To supply an effective search
+\end_layout
+
+\begin_layout Itemize
+To display pages quickly (less than 1 second)
+\end_layout
+
+\begin_layout Itemize
+To gather data of a same type
+\end_layout
+
+\begin_layout Itemize
+To define a sober graphic charter 
+\end_layout
+
+\begin_layout Subsection
+Informations to display
+\end_layout
+
+\begin_layout Subsubsection
+Forms
+\end_layout
+
+\begin_layout Standard
+The forms gather different interactions with the user, where he must type
+ informations.
+ Here is a list of the website’s forms and the informations to give
+\end_layout
+
+\begin_layout Standard
+Connexion
+\end_layout
+
+\begin_layout Itemize
+E-mail address
+\end_layout
+
+\begin_layout Itemize
+Password
+\end_layout
+
+\begin_layout Standard
+Inscription
+\end_layout
+
+\begin_layout Itemize
+Name
+\end_layout
+
+\begin_layout Itemize
+Forename
+\end_layout
+
+\begin_layout Itemize
+E-mail address
+\end_layout
+
+\begin_layout Itemize
+Password
+\end_layout
+
+\begin_layout Itemize
+Confirmation of the password
+\end_layout
+
+\begin_layout Standard
+Adding an item
+\end_layout
+
+\begin_layout Itemize
+Name
+\end_layout
+
+\begin_layout Itemize
+Class
+\end_layout
+
+\begin_layout Itemize
+Subclass
+\end_layout
+
+\begin_layout Itemize
+Description
+\end_layout
+
+\begin_layout Itemize
+Tags
+\end_layout
+
+\begin_layout Itemize
+Picture
+\end_layout
+
+\begin_layout Subsubsection
+Profile
+\end_layout
+
+\begin_layout Standard
+The profile displays all known data (given or calculated) about a user.
+ The user must be able to edit his information.
+ His profile must allow him to see all information concerning his swaps
+ (swaps history, swaps in process, …)
+\end_layout
+
+\begin_layout Subsubsection
+Catalogue
+\end_layout
+
+\begin_layout Standard
+The catalogue is a list of items, matching a search (search with keywords
+ or class) or not.
+ Each item in the list contents the name of the item and a picture allowing
+ the user to have a visual glimpse.
+ When the user passes over an item, a window with more information appears.
+ When the user is logged in, this window also displays a button to ask for
+ this item’s swap, or to contact the displayer about the item.
+ 
+\end_layout
+
+\begin_layout Standard
+The catalogue must also allow the user to know exactly what he is looking
+ at.
+ The top of the page displays a breadcrumb trail.
+ The user can know which class and subclass he is looking at.
+ When the pointer passes on the text “class”, on the breadcrumb trail, a
+ rolling menu appears where the user can change the class to display.
+ He can also pass by a class to find the subclasses he might want to look
+ at.
+\end_layout
+
+\begin_layout Subsubsection
+Item
+\end_layout
+
+\begin_layout Standard
+An item is depicted by his name and picture.
+ The photography is highly recommanded when the user adds an item.
+ As for the description, the more informations there are about an item,
+ the more easily it will be swapped, because the other user can picture
+ this item easily and precisely.
+\end_layout
+
+\begin_layout Subsubsection
+Swap
+\end_layout
+
+\begin_layout Standard
+A swap concerns two items.
+ Its process has three steps: 
+\end_layout
+
+\begin_layout Itemize
+First step, A makes a swap request for the book “Lord of the Rings” (belonging
+ to B)
+\end_layout
+
+\begin_layout Itemize
+Second step, B chooses the items from A he would like to swap for his book
+ “Lord of the rings”
+\end_layout
+
+\begin_layout Itemize
+Third step, A chooses which of this swaps he prefers.
+ B receives a notification to be prepared to swap the item.
+\end_layout
+
+\begin_layout Subsection
+Processes’ modelisation
+\end_layout
+
+\begin_layout Subsubsection
+Research
+\end_layout
+
+\begin_layout Standard
+The research bar must be accessible from every one of the website’s page.
+ It searchs in the description, tags, name of the item, picture, classes
+ and subclasses.
+\end_layout
+
+\begin_layout Standard
+The research must be easy and quick.
+ Everything the user types must be used in order to give him the most precise
+ result possible.
+ The research field can be validated with a magnifying glass-shaped button
+ (which is embedded in the research field) or by pressing the entry key.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Registration
+\end_layout
+
+\begin_layout Standard
+There are several ways to join the registration process.
+ Directly, by clicking on a registration link, or indirectly, for example
+ when trying to swap an item without having an account (the user is invited
+ to create one).
+\end_layout
+
+\begin_layout Standard
+The registration contents one step: filling the form and validating.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename screenshots/inscription.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Registration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Adding an item
+\end_layout
+
+\begin_layout Standard
+Adding an item is also one step: filling the form.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename screenshots/ajouter.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Add an item
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Swapping an item
+\end_layout
+
+\begin_layout Standard
+Swapping an item requires three steps, and two persons participate:
+\end_layout
+
+\begin_layout Enumerate
+Ask for an item (person A)
+\end_layout
+
+\begin_layout Enumerate
+Answer to this request and proposing other items for the swap (person B)
+\end_layout
+
+\begin_layout Enumerate
+Choosing the item (person A) for the swap.
+ In the meantime, the person B is told about the person A’s choice.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename screenshots/swap.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Swap process
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Communication
+\end_layout
+
+\begin_layout Standard
+The only communication allowed between two persons on the website goes by
+ the questions.
+ A question requires two steps and involves two persons.
+\end_layout
+
+\begin_layout Enumerate
+a person A asks a question about an item O (belonging to a person B)
+\end_layout
+
+\begin_layout Enumerate
+the person B answers the questions.
+ In the meantime, the person A is told about the answer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename screenshots/question.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Ask a question
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+III.
+ Interface’s models’ creation
+\end_layout
+
+\begin_layout Subsection
+List of pages
+\end_layout
+
+\begin_layout Standard
+In order for the user not to feel lost, we chose a simple website map, easy
+ to browse.
+ The different pages are: 
+\end_layout
+
+\begin_layout Itemize
+Home
+\end_layout
+
+\begin_layout Itemize
+Catalogue
+\end_layout
+
+\begin_layout Itemize
+Contact
+\end_layout
+
+\begin_layout Itemize
+Profile
+\end_layout
+
+\begin_layout Itemize
+Submitted
+\end_layout
+
+\begin_layout Itemize
+Items
+\end_layout
+
+\begin_layout Subsubsection
+Home
+\end_layout
+
+\begin_layout Standard
+This pages shows the user three choices: to browse the catalogue, to log
+ in (or to register if the user does not have an account yet), to submit
+ an item to swap.
+ Those three choices appear as three big pictured buttons (respectively
+ an open book, a user profile, a plus sign).
+ When passing each button, a contextual help text appears.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename screenshots/home.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Home page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Catalogue
+\end_layout
+
+\begin_layout Standard
+It is possible to choose how many items are displayed.
+ If there are more results than it is possible to display, a paging toolbar
+ appears and allows the user to browse the results.
+ The page displays the item’s main information, and more appears when the
+ item is passed on.
+ There are 4 parts on the page:
+\end_layout
+
+\begin_layout Itemize
+The title “Catalogue”
+\end_layout
+
+\begin_layout Itemize
+A breadcrumb trail / menu toolbar allowing to browse through the classes
+\end_layout
+
+\begin_layout Itemize
+The items list
+\end_layout
+
+\begin_layout Itemize
+The pagination zone
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename screenshots/catalogue_grille.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Catalogue page (icons mode)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename screenshots/catalogue_liste.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Catalogue page (details mode)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Contact
+\end_layout
+
+\begin_layout Standard
+This pages allows the user to contact the website.
+ It is a web’s standard.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename screenshots/contact.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Contact page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Profile
+\end_layout
+
+\begin_layout Standard
+The aim here is to display the information modification form, as well as
+ links leading to other information (swapping historic, messages, submitted
+ items)
+\end_layout
+
+\begin_layout Subsubsection
+Submitted items
+\end_layout
+
+\begin_layout Standard
+It is a catalogue-like view of each item the user submitted and did not
+ swap yet.
+\end_layout
+
+\begin_layout Subsection
+Header
+\end_layout
+
+\begin_layout Standard
+The header needs to gather the website’s redundant information.
+ There are three parts: left, center, right.
+\end_layout
+
+\begin_layout Standard
+On the left, a help/browsing post-it allows the user to display the homepage,
+ the catalogue or to add an item.
+ The help field allows the user to choose an action he would like to do,
+ in order to be guided on the page.
+\end_layout
+
+\begin_layout Standard
+On the center, the website’s logo, linking to the homepage when clicked.
+ Under the logo is the search bar.
+\end_layout
+
+\begin_layout Standard
+On the right, the user area.
+ It displays the connexion fields (email and password) and a connexion button.
+ There is also a link to register.
+\end_layout
+
+\begin_layout Subsection
+Footer
+\end_layout
+
+\begin_layout Standard
+The footer is a textual website’s map.
+ It gathers the website’s important actions.
+ There are only 5 elements so that the user does not have to read too many
+ links in order to find what he wants.
+ The elements are linking to:
+\end_layout
+
+\begin_layout Itemize
+Homepage
+\end_layout
+
+\begin_layout Itemize
+Catalog
+\end_layout
+
+\begin_layout Itemize
+Search toolbar
+\end_layout
+
+\begin_layout Itemize
+Registering form
+\end_layout
+
+\begin_layout Itemize
+Contact page
+\end_layout
+
+\begin_layout Subsection
+The processes toolbar
+\end_layout
+
+\begin_layout Standard
+It follows the user during his browsing.
+ On the left are the swapping process’s 3 steps.
+ To click on a step opens a menu, displaying all swaps at that step.
+\end_layout
+
+\begin_layout Standard
+For example, clicking on the third step will display all swaps needing a
+ final validation.
+ The right part of the toolbar contents the swap historic.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename screenshots/2_proposer.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Propose to swap items
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename screenshots/3_finaliser.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Choose an item
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
